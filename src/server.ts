@@ -1,9 +1,11 @@
 import express, { Express } from 'express';
 import morgan from 'morgan';
 import helmet from 'helmet';
+import mongoose, { mongo } from 'mongoose';
 import cors from 'cors';
 import config from '../config.json';
 import { getFilesWithKeyword } from './utils/getFilesWithKeyword';
+require('dotenv').config();
 
 const app: Express = express();
 
@@ -25,6 +27,22 @@ if (process.env.NODE_ENV === 'development' || config.NODE_ENV === 'development')
 if (process.env.NODE_ENV === 'production' || config.NODE_ENV === 'production') {
   app.use(helmet());
 }
+
+/************************************************************************************
+ *                               MongoDB connection
+ ***********************************************************************************/
+mongoose.connect(`mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_CLUSTER}`, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
+})
+.then(()=> {
+  console.log('Database connected.');
+})
+.catch((err) => {
+  console.log(err);
+})
 
 /************************************************************************************
  *                               Register all routes

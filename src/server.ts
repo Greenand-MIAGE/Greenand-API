@@ -13,18 +13,18 @@ const app: Express = express();
  *                              Basic Express Middlewares
  ***********************************************************************************/
 
-app.set('json spaces', 4);
+app.set(`json spaces`, 4);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Handle logs in console during development
-if (process.env.NODE_ENV === 'development' || config.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === `development` || config.NODE_ENV === `development`) {
   app.use(morgan('dev'));
   app.use(cors());
 }
 
 // Handle security and origin in production
-if (process.env.NODE_ENV === 'production' || config.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === `production` || config.NODE_ENV === `production`) {
   app.use(helmet());
 }
 
@@ -38,7 +38,7 @@ mongoose.connect(`mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONG
   useCreateIndex: true,
 })
 .then(()=> {
-  console.log('Database connected.');
+  console.log(`Database connected.`);
 })
 .catch((err) => {
   console.log(err);
@@ -48,9 +48,9 @@ mongoose.connect(`mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONG
  *                               Register all routes
  ***********************************************************************************/
 
-getFilesWithKeyword('router', __dirname + '/app').forEach((file: string) => {
+getFilesWithKeyword(`router`, __dirname + `/app`).forEach((file: string) => {
   const { router } = require(file);
-  app.use('/', router);
+  app.use(`/`, router);
 })
 /************************************************************************************
  *                               Express Error Handling
@@ -61,7 +61,7 @@ app.use((err: Error, req: express.Request, res: express.Response, next: express.
   return res.status(500).json({
     errorName: err.name,
     message: err.message,
-    stack: err.stack || 'no stack defined'
+    stack: err.stack || `no stack defined`
   });
 });
 

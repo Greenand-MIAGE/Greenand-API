@@ -1,7 +1,6 @@
-import mongoose from "mongoose";
-import bcrypt from "bcrypt";
-import config from "config";
-import validator from "validator";
+import mongoose from 'mongoose';
+import bcrypt from 'bcrypt';
+import config from '../../config.json';
 
 export interface ClientDocument extends mongoose.Document {
   lastName: string;
@@ -28,7 +27,6 @@ const ClientSchema = new mongoose.Schema(
       maxLength: 75,
       lowercase: true,
       trim: true,
-      validate: [validator.isAlpha],
     },
     firstName: {
       type: String,
@@ -37,7 +35,6 @@ const ClientSchema = new mongoose.Schema(
       maxLength: 75,
       lowercase: true,
       trim: true,
-      validate: [validator.isAlpha],
     },
     address: {
       type: String,
@@ -50,7 +47,6 @@ const ClientSchema = new mongoose.Schema(
       required: true,
       unique: true,
       trim: true,
-      validate: [validator.isEmail],
     },
     password: {
       type: String,
@@ -62,7 +58,6 @@ const ClientSchema = new mongoose.Schema(
       required: false,
       lowercase: true,
       trim: true,
-      validate: [validator.isMobilePhone(`fr-FR`)],
     },
     profession: {
       type: String,
@@ -91,7 +86,7 @@ ClientSchema.pre(`save`, async function (next: mongoose.HookNextFunction) {
 
   if (!client.isModified(`password`)) return next();
 
-  const salt = await bcrypt.genSalt(config.get(`Kebab`)); // A modifier
+  const salt = await bcrypt.genSalt(config.SALT_WORK_FACTOR); // A modifier
 
   const hash = await bcrypt.hashSync(client.password, salt);
 

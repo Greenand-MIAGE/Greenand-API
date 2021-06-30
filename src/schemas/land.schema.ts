@@ -10,8 +10,9 @@ export const createLandSchema = object({
             .matches(/^[a-zA-Z0-9_.-]*$/, `Commune name can only contain Latin letters.`),
         postalCode: number()
             .required(`Postal code is required`)
-            .min(5, `The postal code required 5 character`)
-            .max(5, `The postal code required 5 character`),
+            .moreThan(0, `The postal code is to short - should be 1 chars minium`)
+            .max(5, `The postal code required 5 character`)
+            .integer(),
         surface: number()
             .required(`Surface is required`)
             .min(1, `Surface is to short - should be 1 chars minium`)

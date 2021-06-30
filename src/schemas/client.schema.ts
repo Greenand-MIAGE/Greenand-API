@@ -7,12 +7,12 @@ export const createClientSchema = object({
       .required(`Last name is required`)
       .min(2, `Your last name is to short - should be 2 chars minium`)
       .max(75, `Your last name is to long - should be 75 chars maximum`)
-      .matches(/^[a-zA-Z0-9_.-]*$/, `Last name can only contain Latin letters.`),
+      .matches(/^[a-z]+$/, `Last name can only contain Latin letters.`),
     firstName: string()
       .required(`First name is required`)
       .min(2, `Your first name is to short - should be 2 chars minium`)
       .max(75, `Your first name is to long - should be 75 chars maximum`)
-      .matches(/^[a-zA-Z0-9_.-]*$/, `First Name can only contain Latin letters.`),
+      .matches(/^[a-z]+$/, `First Name can only contain Latin letters.`),
     address: string(),
     mail: string()
       .email(`Must be a valid email`)

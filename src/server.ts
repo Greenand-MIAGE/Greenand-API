@@ -1,11 +1,11 @@
-import express, { Express } from 'express';
-import morgan from 'morgan';
-import helmet from 'helmet';
-import mongoose, { mongo } from 'mongoose';
-import cors from 'cors';
-import config from '../config.json';
-import { getFilesWithKeyword } from './utils/getFilesWithKeyword';
-require('dotenv').config();
+import express, { Express } from "express";
+import morgan from "morgan";
+import helmet from "helmet";
+import mongoose, { mongo } from "mongoose";
+import cors from "cors";
+import config from "../config.json";
+import { getFilesWithKeyword } from "./utils/getFilesWithKeyword";
+require("dotenv").config();
 
 const app: Express = express();
 
@@ -47,7 +47,6 @@ mongoose.connect(`mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONG
 /************************************************************************************
  *                               Register all routes
  ***********************************************************************************/
-
 getFilesWithKeyword(`router`, __dirname + `/app`).forEach((file: string) => {
   const { router } = require(file);
   app.use(`/`, router);

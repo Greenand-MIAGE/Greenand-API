@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router } from "express";
 
 // Export module for registering router in express app
 export const router: Router = Router();
@@ -27,5 +27,3 @@ router.delete(`/`, (req, res) => {
     message: `DELETE request from sample router`
   });
 });
-
-

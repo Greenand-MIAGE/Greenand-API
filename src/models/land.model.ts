@@ -20,6 +20,18 @@ const LandSchema = new mongoose.Schema({
     lowercase: true,
     trim: true,
   },
+  postalCode: {
+    type: Number,
+    required: true,
+    lowercase: true,
+    trim: true,
+  },
+  surface: {
+    type: Number,
+    required: true,
+    lowercase: true,
+    trim: true,
+  },
 });
 
 const Land = mongoose.model<LandDocument>(`Land`, LandSchema);

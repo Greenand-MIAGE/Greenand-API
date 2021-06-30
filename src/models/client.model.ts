@@ -86,7 +86,7 @@ ClientSchema.pre(`save`, async function (next: mongoose.HookNextFunction) {
 
   if (!client.isModified(`password`)) return next();
 
-  const salt = await bcrypt.genSalt(config.SALT_WORK_FACTOR); // A modifier
+  const salt = await bcrypt.genSalt(config.SALT_WORK_FACTOR);
 
   const hash = await bcrypt.hashSync(client.password, salt);
 

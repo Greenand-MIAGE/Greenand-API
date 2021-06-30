@@ -1,11 +1,14 @@
-import express, { Express } from "express";
-import morgan from "morgan";
-import helmet from "helmet";
-import mongoose, { mongo } from "mongoose";
-import cors from "cors";
-import config from "../config.json";
-import { getFilesWithKeyword } from "./utils/getFilesWithKeyword";
-require("dotenv").config();
+import express, { Express } from 'express';
+import morgan from 'morgan';
+import helmet from 'helmet';
+import mongoose, { mongo } from 'mongoose';
+import cors from 'cors';
+import config from '../config.json';
+import { getFilesWithKeyword } from './utils/getFilesWithKeyword';
+import log from '../src/logger';
+
+require('dotenv').config();
+
 
 const app: Express = express();
 
@@ -38,10 +41,10 @@ mongoose.connect(`mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONG
   useCreateIndex: true,
 })
 .then(()=> {
-  console.log(`Database connected.`);
+  log.info(`Database connected.`);
 })
 .catch((err) => {
-  console.log(err);
+  log.error(err);
 })
 
 /************************************************************************************

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
-import config from "config";
+import config from "../../config.json";
 import validator from "validator";
 
 export interface ClientDocument extends mongoose.Document {
@@ -91,7 +91,7 @@ ClientSchema.pre(`save`, async function (next: mongoose.HookNextFunction) {
 
   if (!client.isModified(`password`)) return next();
 
-  const salt = await bcrypt.genSalt(config.get(`Kebab`)); // A modifier
+  const salt = await bcrypt.genSalt(config.SALT_WORK_FACTOR);
 
   const hash = await bcrypt.hashSync(client.password, salt);
 

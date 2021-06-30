@@ -7,7 +7,7 @@ export const createLandSchema = object({
             .required(`Commune name is required`)
             .min(2, `The commune name is to short - should be 2 chars minium`)
             .max(75, `The commune name is to long - should be 75 chars maximum`)
-            .matches(/^[a-zA-Z0-9_.-]*$/, `Commune name can only contain Latin letters.`),
+            .matches(/^[a-zA-Z]+$/, `Commune name can only contain Latin letters.`),
         postalCode: number()
             .required(`Postal code is required`)
             .moreThan(0, `The postal code is to short - should be 1 chars minium`)

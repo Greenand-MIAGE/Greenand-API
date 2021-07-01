@@ -1,5 +1,5 @@
-import jwt from "jsonwebtoken";
-import config from "../../config.json";
+import jwt from 'jsonwebtoken';
+import config from '../../config.json';
 
 const privateKey = config.privateKey;
 

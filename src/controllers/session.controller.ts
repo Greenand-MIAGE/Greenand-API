@@ -1,8 +1,8 @@
-import {Request,Response} from "express";
-import { validatePassword } from "../services/client.service";
-import { createAccessToken, createSession } from "../services/session.service";
-import config from "../../config.json";
-import {sign} from "../utils/jwt.utils";
+import {Request,Response} from 'express';
+import { validatePassword } from '../services/client.service';
+import { createAccessToken, createSession } from '../services/session.service';
+import config from '../../config.json';
+import {sign} from '../utils/jwt.utils';
 
 export async function createClientSessionHandler(req: Request, res: Response) {
 
@@ -10,12 +10,12 @@ export async function createClientSessionHandler(req: Request, res: Response) {
     const client = await validatePassword(req.body);
 
     if (!client) {
-        return res.status(401).send("Invalid username/mail or password");
+        return res.status(401).send(`Invalid username/mail or password`);
 
     }
 
     // create a session
-    const session = await createSession(client._id,req.get("client-agent") || "" );
+    const session = await createSession(client._id,req.get(`client-agent`) || `` );
 
     // access token
     const accessToken = createAccessToken(
@@ -27,7 +27,7 @@ export async function createClientSessionHandler(req: Request, res: Response) {
 
     // refresh token
     const refreshToken = sign(session, {
-        expiresIn: config.refreshTokenTtl
+        expiresIn: config.REFRESH_TOKEN_TTL
     });
 
     // send the tokens

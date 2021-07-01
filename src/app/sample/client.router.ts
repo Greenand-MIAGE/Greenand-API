@@ -13,5 +13,5 @@ router.post(`/client`, validateRequest(createClientSchema), createClientHandler)
 router.get(`/clients`, getClientsHandler)
 
 // Login 
-router.post("/login",validateRequest(createClientSessionSchema),
+router.post(`/login`,validateRequest(createClientSessionSchema),
     createClientSessionHandler);

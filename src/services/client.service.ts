@@ -23,7 +23,7 @@ export async function validatePassword(
         mail,
         password,
     }: {
-        mail : ClientDocument["mail"];
+        mail : ClientDocument[`mail`];
         password : string;
     }) {
         const client = await Client.findOne({mail});
@@ -37,5 +37,5 @@ export async function validatePassword(
             return false;
         }
 
-        return omit(client.toJSON(),"password");
+        return omit(client.toJSON(),`password`);
     }

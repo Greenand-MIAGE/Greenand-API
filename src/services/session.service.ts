@@ -1,8 +1,8 @@
-import { LeanDocument } from "mongoose";
-import { ClientDocument } from "../models/client.model";
-import Session, {SessionDocument} from "../models/session.model";
-import config from "../../config.json";
-import {sign} from "../utils/jwt.utils";
+import { LeanDocument } from 'mongoose';
+import { ClientDocument } from '../models/client.model';
+import Session, {SessionDocument} from '../models/session.model';
+import config from '../../config.json';
+import {sign} from '../utils/jwt.utils';
 
 export async function createSession(clientId : string,clientAgent: string) {
     const session = await Session.create({client : clientId,clientAgent});
@@ -16,17 +16,17 @@ export function createAccessToken(
         session,
     }: {
         client :
-            | Omit<ClientDocument,"password">
-            | LeanDocument<Omit<ClientDocument,"password">>;
+            | Omit<ClientDocument,'password'>
+            | LeanDocument<Omit<ClientDocument,'password'>>;
 
         session : 
-            | Omit<SessionDocument,"password">
-            | LeanDocument<Omit<SessionDocument,"password">>;
+            | Omit<SessionDocument,'password'>
+            | LeanDocument<Omit<SessionDocument,'password'>>;
         }) {
 
             const accessToken = sign(
                 {...client,session: session._id},
-                {expiresIn: config.accessTokenTtl}
+                {expiresIn: config.ACCESS_TOKEN_TTL}
             );
 
             return accessToken;

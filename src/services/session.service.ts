@@ -16,12 +16,12 @@ export function createAccessToken(
         session,
     }: {
         client :
-            | Omit<ClientDocument,'password'>
-            | LeanDocument<Omit<ClientDocument,'password'>>;
+            | Omit<ClientDocument,`password`>
+            | LeanDocument<Omit<ClientDocument,`password`>>;
 
         session : 
-            | Omit<SessionDocument,'password'>
-            | LeanDocument<Omit<SessionDocument,'password'>>;
+            | Omit<SessionDocument,`password`>
+            | LeanDocument<Omit<SessionDocument,`password`>>;
         }) {
 
             const accessToken = sign(

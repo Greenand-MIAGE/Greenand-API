@@ -35,3 +35,20 @@ export const createClientSchema = object({
   description: string(),
   profilPicture: string(),
 });
+
+export const createClientSessionSchema = object(
+  {
+    body: object(
+      {
+        mail: string()
+        .email(`Must be a valid email`)
+        .required(`Email is required`), 
+        password: string()
+      .required(`Password is required`)
+      .min(6, `Password is too short - should be 6 chars minimum.`)
+      .max(30, `Password is too long - should be 30 chars maximum.`)
+      .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,30}$/,
+        `Minimum 8 and maximum 30 characters, at least one uppercase letter, one lowercase letter, one number and one special character.`),
+    
+      }),
+  });

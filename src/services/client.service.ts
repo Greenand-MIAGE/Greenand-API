@@ -1,5 +1,6 @@
 import Client, { ClientDocument } from '../models/client.model';
 import { DocumentDefinition } from 'mongoose';
+import { omit } from 'lodash';
 
 export const createClient = async (input: DocumentDefinition<ClientDocument>) => {
     try {
@@ -16,3 +17,25 @@ export const getClients = async () => {
         throw new Error(err);
     }
 }
+
+export async function validatePassword(
+    {
+        mail,
+        password,
+    }: {
+        mail : ClientDocument[`mail`];
+        password : string;
+    }) {
+        const client = await Client.findOne({mail});
+
+        if (!client){
+            return false;
+        }
+        const isValid = await client.comparePassword(password);
+
+        if (!isValid) {
+            return false;
+        }
+
+        return omit(client.toJSON(),`password`);
+    }

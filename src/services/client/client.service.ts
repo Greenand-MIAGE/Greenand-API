@@ -1,4 +1,4 @@
-import Client, { ClientDocument } from '../models/client.model';
+import Client, { ClientDocument } from '../../models/client.model';
 import { DocumentDefinition } from 'mongoose';
 import { omit } from 'lodash';
 

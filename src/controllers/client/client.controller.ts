@@ -1,5 +1,5 @@
-import { createClient, getClients } from '../../services/client/client.service';
-import { omit } from 'lodash';
+import { createClient, getClients} from '../../services/client/client.service';
+import { omit, get } from 'lodash';
 import { Request, Response } from 'express';
 
 export const createClientHandler = async (req: Request, res: Response) => {

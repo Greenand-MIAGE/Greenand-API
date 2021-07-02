@@ -1,16 +1,23 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
+import { v4 as uuidv4 } from 'uuid';
 
 export interface CategoryDocument extends mongoose.Document {
-    label: string;
+  _id: string;
+  label: string;
 }
 
 const CategorySchema = new mongoose.Schema({
-    label: {
-        type: String,
-        required: true,
-        lowercase: true,
-        trim: true,
-    }
+  _id: {
+    type: String,
+    unique: true,
+    default: () => uuidv4(),
+  },
+  label: {
+    type: String,
+    required: true,
+    lowercase: true,
+    trim: true,
+  },
 });
 
 const Category = mongoose.model<CategoryDocument>(`Category`, CategorySchema);

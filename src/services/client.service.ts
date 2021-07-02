@@ -1,5 +1,5 @@
 import Client, { ClientDocument } from '../models/client.model';
-import { DocumentDefinition } from 'mongoose';
+import { DocumentDefinition, FilterQuery } from 'mongoose';
 import { omit } from 'lodash';
 
 export const createClient = async (input: DocumentDefinition<ClientDocument>) => {
@@ -16,6 +16,10 @@ export const getClients = async () => {
     } catch (err) {
         throw new Error(err);
     }
+}
+
+export async function findClient(query: FilterQuery<ClientDocument>) {
+    return Client.findOne(query).lean();
 }
 
 export async function validatePassword(

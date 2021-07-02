@@ -11,7 +11,7 @@ export interface SessionDocument extends mongoose.Document {
 
 const SessionSchema = new mongoose.Schema(
     {
-        client: { type: mongoose.Schema.Types.ObjectId, ref: `Client` },
+        client: { type: mongoose.Schema.Types.String, ref: `Client` },
         valid: { type: Boolean, default: true },
         clientAgent: { type: String },
     },

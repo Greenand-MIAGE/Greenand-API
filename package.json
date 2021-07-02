@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node ./build/src/index.js",
-    "dev": "ts-node ./src/index.ts",
+    "dev": "ts-node-dev ./src/index.ts",
     "dev:nodemon": "nodemon -w src -e ts,json -x ts-node ./src/index.ts",
     "test": "jest"
   },
@@ -36,6 +36,7 @@
   "dependencies": {
     "@types/lodash": "^4.14.170",
     "@types/pino": "^6.3.8",
+    "@types/uuid": "^8.3.0",
     "@types/yup": "^0.29.11",
     "bcrypt": "^5.0.1",
     "config": "^3.3.6",
@@ -51,6 +52,8 @@
     "morgan": "^1.10.0",
     "pino": "^6.11.3",
     "pino-pretty": "^5.1.0",
+    "ts-node-dev": "^1.1.8",
+    "uuid": "^8.3.2",
     "validator": "^13.6.0",
     "yup": "^0.32.9"
   }

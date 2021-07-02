@@ -1,8 +1,8 @@
 import {Request,Response} from 'express';
-import { validatePassword } from '../services/client.service';
-import { createAccessToken, createSession, findSessions, updateSession } from '../services/session.service';
-import config from '../../config.json';
-import { sign } from '../utils/jwt.utils';
+import { validatePassword } from '../../services/client.service';
+import { createAccessToken, createSession, findSessions, updateSession } from '../../services/session.service';
+import config from '../../../config.json';
+import { sign } from '../../utils/jwt.utils';
 import { get } from 'lodash';
 
 

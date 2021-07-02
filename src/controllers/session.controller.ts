@@ -5,9 +5,8 @@ import config from '../../config.json';
 import { sign } from '../utils/jwt.utils';
 import { get } from 'lodash';
 
-export async function createClientSessionHandler(req: Request, res: Response) {
 
-    // validating username/mail and password
+export async function createClientSessionHandler(req: Request, res: Response) {
     const client = await validatePassword(req.body);
 
     if (!client) {
@@ -15,10 +14,8 @@ export async function createClientSessionHandler(req: Request, res: Response) {
 
     }
 
-    // create a session
     const session = await createSession(client._id,req.get(`client-agent`) || `` );
 
-    // access token
     const accessToken = createAccessToken(
         {
             client,
@@ -26,12 +23,10 @@ export async function createClientSessionHandler(req: Request, res: Response) {
         }
     );
 
-    // refresh token
     const refreshToken = sign(session, {
         expiresIn: config.REFRESH_TOKEN_TTL
     });
 
-    // send the tokens
     return res.send({accessToken,refreshToken});
 }
 

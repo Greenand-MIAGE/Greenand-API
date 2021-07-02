@@ -1,8 +1,10 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import config from '../../config.json';
+import { v4 as uuidv4 } from 'uuid';
 
 export interface ClientDocument extends mongoose.Document {
+  _id: string;
   lastName: string;
   firstName: string;
   birthdayDate: Date;
@@ -13,6 +15,7 @@ export interface ClientDocument extends mongoose.Document {
   profession: string;
   description: string;
   profilPicture: string;
+  skills: [{ label: string }];
   createAt: Date;
   updateAt: Date;
   comparePassword(clientPassword: string): Promise<boolean>;
@@ -20,6 +23,11 @@ export interface ClientDocument extends mongoose.Document {
 
 const ClientSchema = new mongoose.Schema(
   {
+    _id: {
+      type: String,
+      unique: true,
+      default: () => uuidv4(),
+    },
     lastName: {
       type: String,
       required: true,
@@ -77,6 +85,16 @@ const ClientSchema = new mongoose.Schema(
       lowercase: true,
       trim: true,
     },
+    skills: [
+      {
+        label: {
+          type: String,
+          required: false,
+          trim: true,
+          lowercase: true,
+        },
+      },
+    ],
   },
   { timestamps: true }
 );

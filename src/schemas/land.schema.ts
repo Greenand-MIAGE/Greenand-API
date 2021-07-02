@@ -7,15 +7,15 @@ export const createLandSchema = object({
             .required(`Commune name is required`)
             .min(2, `The commune name is to short - should be 2 chars minium`)
             .max(75, `The commune name is to long - should be 75 chars maximum`)
-            .matches(/^[a-zA-Z]+$/, `Commune name can only contain Latin letters.`),
+            .matches(/^[a-zàâçéèêëîïôûùüÿñæœ .-]*$/i, `Commune name can only contain Latin letters.`),
         postalCode: number()
             .required(`Postal code is required`)
-            .moreThan(0, `The postal code is to short - should be 1 chars minium`)
-            .max(5, `The postal code required 5 character`)
+            .moreThan(0, `The postal code is negative - should be positive`)
+            .max(100000, `The postal code required 5 character`)
             .integer(),
         surface: number()
             .required(`Surface is required`)
-            .min(1, `Surface is to short - should be 1 chars minium`)
-            .max(25, `Surface is to long - should be 75 chars maximum`)
+            .moreThan(0, `The surface is negative - should be positive`)
+            .integer()
     }),
 });

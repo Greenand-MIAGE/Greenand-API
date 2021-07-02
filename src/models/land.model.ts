@@ -8,7 +8,7 @@ export interface LandDocument extends mongoose.Document {
   commune: String;
   postalCode: Number;
   surface: Number;
-  client: ClientDocument[`_id`];
+  client: ClientDocument["_id"];
 }
 
 const LandSchema = new mongoose.Schema({
@@ -41,7 +41,7 @@ const LandSchema = new mongoose.Schema({
     lowercase: true,
     trim: true,
   },
-  client: { type: mongoose.Schema.Types.String, ref: `Client`}
+  client: { type: mongoose.Schema.Types.ObjectId, ref: `Client`}
 });
 
 const Land = mongoose.model<LandDocument>(`Land`, LandSchema);

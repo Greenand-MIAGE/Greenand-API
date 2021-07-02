@@ -8,7 +8,7 @@ import {
   createClientSessionHandler,
   invalidateClientSessionHandler,
   getUserSessionHandler,
-} from "../../controllers/session.controller";
+} from "../../controllers/session/session.controller";
 
 import {
   createClientHandler,

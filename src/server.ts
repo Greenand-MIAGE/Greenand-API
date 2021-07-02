@@ -6,12 +6,14 @@ import cors from 'cors';
 import config from '../config.json';
 import { getFilesWithKeyword } from './utils/getFilesWithKeyword';
 import log from '../src/logger';
+import { deserializeClient } from './middleware'; 
+
 
 require('dotenv').config();
 
 
 const app: Express = express();
-
+app.use(deserializeClient);
 /************************************************************************************
  *                              Basic Express Middlewares
  ***********************************************************************************/

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import { v4 as uuidv4 } from 'uuid';
 export interface ActivityDocument extends mongoose.Document {
-  _id: string;
+  id: string;
   label: string;
   clientMax: Number;
   description: string;
@@ -9,7 +9,7 @@ export interface ActivityDocument extends mongoose.Document {
 
 const ActivitySchema = new mongoose.Schema(
   {
-    _id: {
+    id: {
       type: String,
       unique: true,
       default: () => uuidv4(),

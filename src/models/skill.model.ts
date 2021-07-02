@@ -2,12 +2,12 @@ import mongoose from 'mongoose';
 import { v4 as uuidv4 } from 'uuid';
 
 export interface SkillDocument extends mongoose.Document {
-  _id: string;
+  id: string;
   label: string;
 }
 
 const SkillSchema = new mongoose.Schema({
-  _id: {
+  id: {
     type: String,
     unique: true,
     default: () => uuidv4(),

@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { ClientDocument } from './client.model';
 
 export interface LandDocument extends mongoose.Document {
-  _id: string;
+  id: string;
   address: string;
   commune: String;
   postalCode: Number;
@@ -12,7 +12,7 @@ export interface LandDocument extends mongoose.Document {
 }
 
 const LandSchema = new mongoose.Schema({
-  _id: {
+  id: {
     type: String,
     unique: true,
     default: () => uuidv4(),

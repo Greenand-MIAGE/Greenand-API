@@ -5,7 +5,6 @@ import config from '../../config.json';
 import { sign, decode } from '../utils/jwt.utils';
 import { get } from 'lodash';
 import { findClient } from './client.service';
-import { sign } from '../utils/jwt.utils';
 
 export async function createSession(clientId: string, clientAgent: string) {
     const session = await Session.create({ client: clientId, clientAgent });

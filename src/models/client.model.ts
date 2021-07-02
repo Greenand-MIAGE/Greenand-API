@@ -4,7 +4,7 @@ import config from '../../config.json';
 import { v4 as uuidv4 } from 'uuid';
 
 export interface ClientDocument extends mongoose.Document {
-  _id: string;
+  id: string;
   lastName: string;
   firstName: string;
   birthdayDate: Date;
@@ -23,7 +23,7 @@ export interface ClientDocument extends mongoose.Document {
 
 const ClientSchema = new mongoose.Schema(
   {
-    _id: {
+    id: {
       type: String,
       unique: true,
       default: () => uuidv4(),

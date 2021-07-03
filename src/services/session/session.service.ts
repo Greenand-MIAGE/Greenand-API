@@ -1,10 +1,10 @@
 import { LeanDocument , FilterQuery , UpdateQuery } from 'mongoose';
-import { ClientDocument } from '../models/client.model';
-import Session, { SessionDocument } from '../models/session.model';
-import config from '../../config.json';
-import { sign, decode } from '../utils/jwt.utils';
+import { ClientDocument } from '../../models/client.model';
+import Session, { SessionDocument } from '../../models/session.model';
+import config from '../../../config.json';
+import { sign, decode } from '../../utils/jwt.utils';
 import { get } from 'lodash';
-import { findClient } from './client.service';
+import { findClient } from '../client/client.service';
 
 export async function createSession(clientId: string, clientAgent: string) {
     const session = await Session.create({ client: clientId, clientAgent });

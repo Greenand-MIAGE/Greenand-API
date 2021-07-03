@@ -1,7 +1,7 @@
 import { get } from 'lodash';
 import { Request, Response, NextFunction } from 'express';
 import { decode } from '../utils/jwt.utils';
-import { reIssueAccessToken } from '../services/session.service';
+import { reIssueAccessToken } from '../services/session/session.service';
 
 const deserializeClient = async (
     req : Request,

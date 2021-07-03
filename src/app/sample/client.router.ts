@@ -37,6 +37,6 @@ router.get(`/login`, requiresClient, getUserSessionHandler);
 
 router.delete(`/logout`, requiresClient, invalidateClientSessionHandler);
 
-router.get(`/client/:clientId`, getClientByIdHandler);
+router.get(`/client`, getClientByIdHandler);
 
 router.put(`/add-skill/:clientId/:skillId`, addSkillHandler);

@@ -1,5 +1,10 @@
 import Land, { LandDocument } from "../../models/land.model";
-import { DocumentDefinition } from "mongoose";
+import {
+  DocumentDefinition,
+  FilterQuery,
+  UpdateQuery,
+  QueryOptions,
+} from "mongoose";
 
 export const createLand = async (input: DocumentDefinition<LandDocument>) => {
   try {
@@ -17,4 +22,11 @@ export const getLands = async () => {
   } catch (err) {
     throw new Error(err);
   }
+};
+
+export const findLandClient = async (
+  query: FilterQuery<LandDocument>,
+  options: QueryOptions = { lean: true }
+) => {
+  return Land.findById(query.client.clientId, {}, options);
 };

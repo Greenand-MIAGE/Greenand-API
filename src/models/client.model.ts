@@ -15,7 +15,6 @@ export interface ClientDocument extends mongoose.Document {
   profession: string;
   description: string;
   profilPicture: string;
-  skills: [{ label: string }];
   createAt: Date;
   updateAt: Date;
   comparePassword(clientPassword: string): Promise<boolean>;
@@ -85,16 +84,6 @@ const ClientSchema = new mongoose.Schema(
       lowercase: true,
       trim: true,
     },
-    skills: [
-      {
-        label: {
-          type: String,
-          required: false,
-          trim: true,
-          lowercase: true,
-        },
-      },
-    ],
   },
   { timestamps: true }
 );

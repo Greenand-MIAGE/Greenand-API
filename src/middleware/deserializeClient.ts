@@ -1,9 +1,6 @@
-import { get } from 'lodash';
 import { Request, Response, NextFunction } from 'express';
-import { decode, signJWT, verifyJWT } from '../utils/jwt.utils';
+import { signJWT, verifyJWT } from '../utils/jwt.utils';
 import { getSession,  } from '../services/session/session.service';
-import { getClientSessionHandler } from '../controllers/session/session.controller';
-import log from '../logger';
 
 function deserializeClient(
     req : Request,
@@ -11,19 +8,18 @@ function deserializeClient(
     next : NextFunction
 ) {
     const { accessToken, refreshToken } = req.cookies;
-    log.info(req.cookies)
-
+    
     if (!accessToken) return next();
 
-    const { payload: client, expired } = verifyJWT(accessToken);
+    const { payload, expired } = verifyJWT(accessToken);
     
-    if (client) {
+    if (payload) {
         // @ts-ignore
         req.client = payload;
 
         return next();
     }
-
+    
     const { payload: refresh } = expired && refreshToken ? verifyJWT(refreshToken) : { payload: null};
 
     if (!refresh) {
@@ -45,7 +41,6 @@ function deserializeClient(
 
     //@ts-ignore
     req.client = verifyJWT(newAccessToken).payload;
-
 
         return next();
 

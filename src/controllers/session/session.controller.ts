@@ -1,12 +1,9 @@
 import {Request,Response} from 'express';
 import { validatePassword } from '../../services/client/client.service';
-//import { createAccessToken, createSession, findSessions, updateSession } from '../../services/session/session.service';
 import config from '../../../config.json';
-import { signJWT, verifyJWT } from '../../utils/jwt.utils';
-import { get } from 'lodash';
+import { signJWT } from '../../utils/jwt.utils';
 import Client from '../../models/client.model';
 import { createSession, invalidateSession } from '../../services/session/session.service';
-
 
 export async function createClientSessionHandler(req: Request, res: Response) {
    const { mail, password } = req.body;
@@ -18,9 +15,9 @@ export async function createClientSessionHandler(req: Request, res: Response) {
 
     }
 
-    const session =  createSession(mail, client.firstName );
+    const session =  createSession(mail, client.firstName ,client._id);
 
-    const accessToken = signJWT({mail: client.mail, name: client.firstName, sessionId: session.sessionId}, `5s`);
+    const accessToken = signJWT({mail: client.mail, name: client.firstName,clientId: client._id, sessionId: session.sessionId}, `5s`);
     
     const refreshToken = signJWT({ sessionId: session.sessionId}, `1y`);
 
@@ -34,23 +31,13 @@ export async function createClientSessionHandler(req: Request, res: Response) {
         maxAge: 3.154e10,
         httpOnly: true,
     });
-    /* const refreshToken = sign(session, {
-        expiresIn: config.REFRESH_TOKEN_TTL
-    }); */
-
+   
     return res.send(session);
 }
 
-/*export async function invalidateClientSessionHandler(req: Request, res:Response) {
-    const sessionId = get(req,`client.session`);
-
-    await updateSession({ _id: sessionId}, { valid : false});
-
-    return res.sendStatus(200);
-}*/
 
 export  function getClientSessionHandler(req: Request, res: Response) {
-    //@ts-ignore
+     //@ts-ignore
     return res.send(req.client);
 }
 

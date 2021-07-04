@@ -6,12 +6,35 @@ import { sign, decode } from '../../utils/jwt.utils';
 import { get } from 'lodash';
 import { findClient } from '../client/client.service';
 
-export async function createSession(clientId: string, clientAgent: string) {
-    const session = await Session.create({ client: clientId, clientAgent });
+export const sessions: Record<string,
+{ sessionId: string; mail: string; valid: boolean}> = {};
 
-    return session.toJSON();
+export function createSession(mail: string, firstName: string) {
+    const sessionId = String(Object.keys(sessions).length +1);
+
+    const session = { sessionId, mail, valid: true, firstName};
+
+    sessions[sessionId] = session;
+
+    return session;
 }
 
+export function getSession(sessionId: string) {
+    const session = sessions[sessionId];
+
+    return session && session.valid ? session : null;
+}
+
+export function invalidateSession(sessionId: string) {
+    const session = sessions[sessionId];
+
+    if (session) {
+        sessions[sessionId].valid = false;
+    }
+
+    return sessions[sessionId];
+}
+/*
 export function createAccessToken(
     {
         client,
@@ -66,3 +89,4 @@ export async function updateSession(
 export async function findSessions(query: FilterQuery<SessionDocument>) {
     return Session.find(query).lean();
 }
+*/

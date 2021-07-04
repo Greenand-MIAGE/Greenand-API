@@ -1,46 +1,53 @@
 import { get } from 'lodash';
 import { Request, Response, NextFunction } from 'express';
-import { decode } from '../utils/jwt.utils';
-import { reIssueAccessToken } from '../services/session/session.service';
+import { decode, signJWT, verifyJWT } from '../utils/jwt.utils';
+import { getSession,  } from '../services/session/session.service';
+import { getClientSessionHandler } from '../controllers/session/session.controller';
+import log from '../logger';
 
-const deserializeClient = async (
+function deserializeClient(
     req : Request,
     res : Response,
     next : NextFunction
-) => {
-    const accessToken = get(req, `headers.authorization`,``).replace(
-        /^Bearer\s/,
-        ``
-    );
-
-    const refreshToken = get(req,`headers.x-refresh`);
+) {
+    const { accessToken, refreshToken } = req.cookies;
+    log.info(req.cookies)
 
     if (!accessToken) return next();
 
-    const { decoded, expired } = decode(accessToken);
-
-    if (decoded) {
-        // @ts-ignore
-        req.client = decoded;
-
-        return next();
-    }
-
-    if (expired && refreshToken) {
-        const newAccessToken = await reIssueAccessToken({ refreshToken })
+    const { payload: client, expired } = verifyJWT(accessToken);
     
-        if (newAccessToken) {
-
-            res.setHeader(`x-access-token`, newAccessToken);
-
-            const { decoded } = decode(newAccessToken);
-
-            // @ts-ignore
-            req.client = decoded;
-        }
+    if (client) {
+        // @ts-ignore
+        req.client = payload;
 
         return next();
     }
+
+    const { payload: refresh } = expired && refreshToken ? verifyJWT(refreshToken) : { payload: null};
+
+    if (!refresh) {
+        return next();
+    }
+    //@ts-ignore
+    const session = getSession(refresh.sessionId);
+
+    if(!session){
+        return next();
+    }
+
+    const newAccessToken = signJWT(session, `5s`);
+
+    res.cookie(`accessToken`,newAccessToken, {
+        maxAge: 300000,
+        httpOnly: true,
+    });
+
+    //@ts-ignore
+    req.client = verifyJWT(newAccessToken).payload;
+
+
+        return next();
 
 };
 

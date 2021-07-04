@@ -9,7 +9,8 @@ import { findLandClient } from "../../services/land/land.service";
 
 export const createLandHandler = async (req: Request, res: Response) => {
   try {
-    const clientId = get(req, `client.client`);
+    //@ts-ignore
+    const clientId = req.client.clientId;
     const body = req.body;
 
     const land = await createLand({ ...body, client: clientId });

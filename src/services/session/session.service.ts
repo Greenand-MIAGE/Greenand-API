@@ -1,68 +1,30 @@
-import { LeanDocument , FilterQuery , UpdateQuery } from 'mongoose';
-import { ClientDocument } from '../../models/client.model';
-import Session, { SessionDocument } from '../../models/session.model';
-import config from '../../../config.json';
-import { sign, decode } from '../../utils/jwt.utils';
-import { get } from 'lodash';
-import { findClient } from '../client/client.service';
+import { v4 as uuidv4 } from "uuid";
 
-export async function createSession(clientId: string, clientAgent: string) {
-    const session = await Session.create({ client: clientId, clientAgent });
+export const sessions: Record<string,
+{ sessionId: string; mail: string; valid: boolean}> = {};
 
-    return session.toJSON();
+export function createSession(mail: string, firstName: string, clientId: string) {
+    const sessionId = uuidv4();
+
+    const session = { sessionId, mail, valid: true, firstName,clientId};
+
+    sessions[sessionId] = session;
+
+    return session;
 }
 
-export function createAccessToken(
-    {
-        client,
-        session,
-    }: {
-        client:
-        | Omit<ClientDocument, `password`>
-        | LeanDocument<Omit<ClientDocument, `password`>>;
+export function getSession(sessionId: string) {
+    const session = sessions[sessionId];
 
-        session:
-        | Omit<SessionDocument, `password`>
-        | LeanDocument<Omit<SessionDocument, `password`>>;
-    }) {
-
-    const accessToken = sign(
-        { ...client, session: session._id },
-        { expiresIn: config.ACCESS_TOKEN_TTL }
-    );
-
-            return accessToken;
-        }
-
-export async function reIssueAccessToken({
-    refreshToken,
-}: {
-    refreshToken: string;
-}) {
-    const { decoded } = decode(refreshToken);
-
-    if (!decoded || !get(decoded, `_id`)) return false;
-
-    const session = await Session.findById(get(decoded, `_id`));
-
-    if (!session || !session?.valid) return false;
-
-    const client = await findClient({ _id: session.client});
-
-    if (!client) return false;
-
-    const accessToken = createAccessToken({ client, session});
-
-    return accessToken;
+    return session && session.valid ? session : null;
 }
 
-export async function updateSession(
-    query: FilterQuery<SessionDocument>,
-    update: UpdateQuery<SessionDocument>
-) {
-    return Session.updateOne(query, update);
-}
+export function invalidateSession(sessionId: string) {
+    const session = sessions[sessionId];
 
-export async function findSessions(query: FilterQuery<SessionDocument>) {
-    return Session.find(query).lean();
+    if (session) {
+        sessions[sessionId].valid = false;
+    }
+
+    return sessions[sessionId];
 }

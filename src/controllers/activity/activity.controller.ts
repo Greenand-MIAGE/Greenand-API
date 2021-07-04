@@ -11,7 +11,8 @@ import { v4 as uuidv4 } from "uuid";
 
 export const createActivityHandler = async (req: Request, res: Response) => {
   try {
-    const clientId = get(req, `client.client`);
+      //@ts-ignore
+      const clientId = req.client.clientId;
     const landId = req.params.landId;
     log.info(landId);
 
@@ -32,7 +33,8 @@ export const reservationActivityHandler = async (
   req: Request,
   res: Response
 ) => {
-  const clientReservationId = get(req, `client.client`);
+  //@ts-ignore
+  const clientReservationId = req.client.clientId;
   log.info(clientReservationId);
   const activityId = req.params.activityId;
 

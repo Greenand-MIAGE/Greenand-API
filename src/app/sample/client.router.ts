@@ -6,8 +6,8 @@ import {
 } from "../../schemas/client.schema";
 import {
   createClientSessionHandler,
-  invalidateClientSessionHandler,
-  getUserSessionHandler,
+  deleteClientSessionHandler,
+  getClientSessionHandler,
 } from "../../controllers/session/session.controller";
 
 import {
@@ -29,13 +29,13 @@ router.get(`/clients`, getClientsHandler);
 
 router.post(
   `/login`,
-  validateRequest(createClientSessionSchema),
+  //validateRequest(createClientSessionSchema),
   createClientSessionHandler
 );
 
-router.get(`/login`, requiresClient, getUserSessionHandler);
+router.get(`/login`, requiresClient, getClientSessionHandler);
 
-router.delete(`/logout`, requiresClient, invalidateClientSessionHandler);
+router.delete(`/logout`, requiresClient, deleteClientSessionHandler);
 
 router.get(`/client`, getClientByIdHandler);
 

@@ -3,17 +3,18 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import mongoose, { mongo } from 'mongoose';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import config from '../config.json';
 import { getFilesWithKeyword } from './utils/getFilesWithKeyword';
 import log from '../src/logger';
 import { deserializeClient } from './middleware'; 
 
-
 require('dotenv').config();
 
-
 const app: Express = express();
+app.use(cookieParser());
 app.use(deserializeClient);
+
 /************************************************************************************
  *                              Basic Express Middlewares
  ***********************************************************************************/

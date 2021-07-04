@@ -34,10 +34,7 @@ export const createClientSchema = object({
   profession: string(),
   description: string(),
   profilPicture: string(),
-  skills : object({
-    value: string()
-    .matches(/^[a-zàâçéèêëîïôûùüÿñæœ .-]*$/i, `Label can only contains Latin letters.`), //TODO: Régler les restrictions sur un objet.
-  }),
+  
 });
 
 export const createClientSessionSchema = object(

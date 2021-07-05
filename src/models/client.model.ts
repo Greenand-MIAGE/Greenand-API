@@ -1,14 +1,16 @@
-import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
-import config from '../../config.json';
-import { v4 as uuidv4 } from 'uuid';
+import mongoose from "mongoose";
+import bcrypt from "bcrypt";
+import config from "../../config.json";
+import { v4 as uuidv4 } from "uuid";
 
 export interface ClientDocument extends mongoose.Document {
   id: string;
   lastName: string;
   firstName: string;
   birthdayDate: Date;
-  address: string;
+  street: string;
+  city: string;
+  postalCode: number;
   mail: string;
   password: string;
   phone: string;
@@ -43,9 +45,21 @@ const ClientSchema = new mongoose.Schema(
       lowercase: true,
       trim: true,
     },
-    address: {
+    street: {
       type: String,
-      required: false,
+      required: true,
+      lowercase: true,
+      trim: true,
+    },
+    city: {
+      type: String,
+      required: true,
+      lowercase: true,
+      trim: true,
+    },
+    postalCode: {
+      type: Number,
+      required: true,
       lowercase: true,
       trim: true,
     },

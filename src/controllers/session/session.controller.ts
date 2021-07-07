@@ -8,22 +8,21 @@ import { createSession, invalidateSession } from '../../services/session/session
 export async function createClientSessionHandler(req: Request, res: Response) {
    const { mail, password } = req.body;
    
-    const client = await Client.findOne({ mail });
+    const client = await validatePassword({ mail, password });;
     
-    if (!client ) {
+    if (!client) {
         return res.status(401).send(`Invalid username/mail or password`);
-
     }
 
     const session =  createSession(mail, client.firstName ,client._id);
 
-    const accessToken = signJWT({mail: client.mail, name: client.firstName,clientId: client._id, sessionId: session.sessionId}, `5s`);
+    const accessToken = signJWT({mail: client.mail, name: client.firstName,clientId: client._id, sessionId: session.sessionId}, `900s`);
     
     const refreshToken = signJWT({ sessionId: session.sessionId}, `1y`);
 
 
     res.cookie(`accessToken`, accessToken, {
-        maxAge: 300000,
+        maxAge: 900000,
         httpOnly: true,
     });
 

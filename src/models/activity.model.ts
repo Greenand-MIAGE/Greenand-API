@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
-import { v4 as uuidv4 } from 'uuid';
-import { ClientDocument } from './client.model';
-import { LandDocument } from './land.model';
+import mongoose from "mongoose";
+import { v4 as uuidv4 } from "uuid";
+import { ClientDocument } from "./client.model";
+import { LandDocument } from "./land.model";
 
 export interface ActivityDocument extends mongoose.Document {
   id: string;
@@ -12,16 +12,18 @@ export interface ActivityDocument extends mongoose.Document {
     {
       startOfDay: string;
       startOfHour: string;
-      endOfHour: string;
     }
   ];
   client: ClientDocument[`_id`];
   land: LandDocument[`_id`];
   reservation: [
-    { id_reservation: string;
+    {
+      id_reservation: string;
       client: ClientDocument[`_id`];
+      startOfDay: string;
+      startOfHour: string;
     }
-  ]
+  ];
 }
 
 const ActivitySchema = new mongoose.Schema(
@@ -39,9 +41,6 @@ const ActivitySchema = new mongoose.Schema(
       unique: false,
       trim: true,
       lowercase: true,
-    },
-    clientMax: {
-      type: Number,
     },
     description: {
       type: String,
@@ -61,11 +60,6 @@ const ActivitySchema = new mongoose.Schema(
           required: true,
           trim: true,
         },
-        endOfHour: {
-          type: String,
-          required: true,
-          trim: true,
-        },
       },
     ],
     client: {
@@ -77,10 +71,20 @@ const ActivitySchema = new mongoose.Schema(
     reservation: [
       {
         client: {
-          type: mongoose.Schema.Types.ObjectId, 
+          type: mongoose.Schema.Types.ObjectId,
           ref: `Client`,
           required: false,
           unique: true,
+        },
+        startOfDay: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+        startOfHour: {
+          type: String,
+          required: true,
+          trim: true,
         },
       },
     ],

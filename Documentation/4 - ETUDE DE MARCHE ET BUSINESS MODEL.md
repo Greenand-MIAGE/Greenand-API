@@ -1,40 +1,42 @@
-﻿# ETUDE DE MARCHE
+﻿# ÉTUDE DE MARCHE
 
 ## Définition
 
-Le **taux de pénétration** est un indicateur de gestion commerciale qui traduit la proportion de consommateurs ayant acheté le produit pour une période et un marché donnés. Le taux de pénétration exprimé en pourcentage se calcule donc par la formule : (nombre de clients obtenus / clients potentiels de la zone) X 100.
+Le **taux de pénétration** est un indicateur de gestion commerciale qui traduit la proportion de consommateurs ayant acheté le produit pour une période et un marché donnés. Le taux de pénétration exprimé en pourcentage se calcule donc par la formule : 
+
+**(Nombre de clients obtenus/clients potentiels de la zone) X 100**
 
 Si un marché géographique est composé de 2 millions de consommateurs (ou clients potentiels) et qu'une entreprise y compte 500 000 clients alors son taux de pénétration est de 25%. Le calcul du taux de pénétration est alors de (500 000 / 2 000 000) X 100 = 25%.
 
-_Etude de marché sur les végétaux en France en 2020 produit par Kantar [consultable à ce lien](https://www.valhor.fr/fileadmin/A-Valhor/Valhor_PDF/Etudes_BilanAchatsFrancaisVegetauxDonnees2020Complet_Kantar.pdf)._
+_Étude de marché sur les végétaux en France en 2020 produit par Kantar [consultable à ce lien](https://www.valhor.fr/fileadmin/A-Valhor/Valhor_PDF/Etudes_BilanAchatsFrancaisVegetauxDonnees2020Complet_Kantar.pdf)._
 
 
 ## Ce qui en ressort
 
-* 17 millions de jardiniers (35% de la population)
-* Un million d’hectares de jardin (autant que les réserves naturelles)
-* 78% y consacre une bonne partie de leur temps libre
-* 8 milliards d’euros par an sont investis par les Français pour leurs jardins, le jardin s’impose comme la 5ème pièce de la maison
-* Loi Labbé qui arrive en 2022 va interdire l’usage de pesticide dans les jardins privés
-* 38% des jardins disposent d’une partie réservée aux potagers
-* Le marché du jardinage est en pleine expansion
-* 7 Français sur 10 prennent du plaisir à entretenir un jardin
-* Les jardins partagés concernent les moins de 35 ans
-* La période pour lancer l’application s'avère très porteuse avec le déconfinement 
-* 23% des consommateurs affirment avoir dépensé davantage que s’il n’y avait pas eu de confinement
-* 64% des Français possédant un espace vert ont réalisé au moins un achat sur ces marchés entre Avril et Juin 2021
-* augmentation de 5,5% par an en moyenne, croissance à deux chiffres en 2021 (10%)
-* 75% des foyers ont acheté au moins un végétal (21M de foyers) : les végétaux extérieur constituent toujours l’essentiel des volumes d’achat
-* Jardineries, marchés et magasins de bricolage particulièrement affectés alors que la vente par correspondance a augmenté
-* Le marché du potager a été le moins touché par la crise. Pareille pour le marché de l’ornement (fleurs, etc.)
-* Sur les lieux d’achats, les jardineries ont reculé, à la fois en fréquentation et en sommes dépensées. En revanche, les producteurs s’en sont très bien sortis à tous les niveaux. En fréquentation, les marchés ont aussi été affectés, au profit de la grande distribution.
-* C’est un marché résistant face à la crise (rassurant pour les investisseur pour lancer l’appli malgré l’incertitude de la situation).
+* **17 millions** de jardiniers (35% de la population),
+* Un million d’hectares de jardin (autant que les réserves naturelles),
+* **78% y consacre une bonne partie** de leur temps libre
+* **8 milliards d’euros** par an sont investis par les Français pour leurs jardins, le jardin s’impose comme la 5ème pièce de la maison,
+* Loi Labbé qui arrive en 2022 va interdire l’usage de pesticide dans les jardins privés,
+* **38% des jardins** disposent d’une partie réservée aux potagers,
+* Le marché du jardinage est en pleine expansion,
+* **7 Français sur 10** prennent du plaisir à entretenir un jardin,
+* Les **jardins partagés concernent les moins de 35 ans**
+* La **période pour lancer l’application s'avère très porteuse** avec le déconfinement,
+* **23% des consommateurs** affirment avoir dépensé davantage que s’il n’y avait pas eu de confinement,
+* **64% des Français** possédant un espace vert ont réalisé au moins un achat sur ces marchés entre avril et juin 2021,
+* Augmentation de **5,5% par an** en moyenne, croissance à deux chiffres en 2021 (10%),
+* **75% des foyers** ont acheté au moins un végétal (21 millions de foyers) : les végétaux extérieurs constituent toujours l’essentiel des volumes d’achat,
+* Jardineries, marchés et magasins de bricolage particulièrement affectés par la crise sanitaire alors que la vente par correspondance a augmenté,
+* Le **marché du potager a été le moins touché par la crise**. Pareille pour le marché de l’ornement (fleurs, etc.),
+* Sur les lieux d’achats, les jardineries ont reculé, à la fois en fréquentation et en sommes dépensées. En revanche, les producteurs s’en sont très bien sortis à tous les niveaux. En fréquentation, les marchés ont aussi été affectés, au profit de la grande distribution,
+* **C’est un marché résistant face à la crise** (rassurant pour les investisseurs pour lancer le site internet malgré l’incertitude de la situation).
 
 
-## Evolution par rapport à 2013
+## Évolution par rapport à 2013
 
-* 1,5 milliard par an
-* augmentation de 5,5% par ans en moyenne, croissance à deux chiffre en 2021 (10%)
+* 1,5 milliard par an,
+* **Augmentation de 5,5% par an** en moyenne, croissance à deux chiffres en 2021 (10%).
 
 
 # Rocket Model (détaillé)
@@ -43,7 +45,7 @@ _Etude de marché sur les végétaux en France en 2020 produit par Kantar [consu
 
 * Une équipe technique étant en place, nous avons décidé dans un premier temps de construire l’architecture du site. Cette démarche permet une économie de coût et surtout de mieux cadrer nos besoins pour le futur développement du site. Néanmoins, nous louerons certains services, tels que les services d’hébergement et de base de données.
 
-* A terme, nous souhaitons rester souverain de l’architecture de notre site, et de dépendre au minimum de prestations externes. En ce sens, si le développement de l’activité est un succès, nous préférons engager un développeur supplémentaire.
+* À terme, nous souhaitons rester souverain de l’architecture de notre site, et de dépendre au minimum de prestations externes. En ce sens, si le développement de l’activité est un succès, nous préférons engager un développeur supplémentaire.
 
 
 ## Quel cadre pour établir la confiance entre les participants  ?
@@ -70,7 +72,7 @@ _Etude de marché sur les végétaux en France en 2020 produit par Kantar [consu
 1. AMAP abonnement annuel pour les agriculteurs, commission sur le prix que paient les acheteurs
 1. Créneaux dédiés
 
-Le prix est agressif afin de récupérer toujours plus de clients. Sur la base qu’un client coûte 8,95€ par tête (500000/55000). L’abonnement annuel permet de rapporter 24€. Évidemment pas tout le monde ne va s'abonner mais à ce prix là, cela permet de concurrencer les AMAP (qui ont un coût bien plus élevé). 1 client en finance 3. Le modèle passerait en Freemium. Et plus il y a de clients, plus le coût par tête va baisser.
+Le prix est agressif afin de récupérer toujours plus de clients. Sur la base qu’un client coûte 8,95€ par tête (500000/55000). L’abonnement annuel permet de rapporter 24€. Évidemment pas tout le monde ne va s'abonner mais à ce prix-là, cela permet de concurrencer les AMAP (qui ont un coût bien plus élevé). 1 client en finance 3. Le modèle passerait en Freemium. Et plus il y a de clients, plus le coût par tête va baisser.
 
 
 ## Règles d’accès pour le producteur
@@ -80,13 +82,13 @@ Le prix est agressif afin de récupérer toujours plus de clients. Sur la base q
 * IDEM pour les utilisateurs (hormis le terrain).
 
 
-## Quels outils/services la plateforme va fournir aux utilisateurs et producteurs  ?
+## Quels outils/services la plateforme va fournir aux utilisateurs et aux producteurs ?
 
 Dans la phase I, les outils et services proposés seront les suivants :
 * La création d’un profil permettant de renseigner sa dénomination, sa localisation, de poster des photos de son terrain (le cas échéant), de renseigner ses compétences ou de rechercher les compétences qu’il souhaite acquérir,
 * Un agenda interactif permettant de renseigner les disponibilités des possesseurs de jardin afin de réserver un moment de partage avec eux,
 * Pour les possesseurs de jardin, un agenda indiquant les dates et horaires auxquels ils reçoivent des participants,
-* Une carte permettant d’indiquer les possesseurs de jardin autour de la localisation de l’utilisateurs ainsi qu’un système de recherche par compétences.
+* Une carte permettant d’indiquer les possesseurs de jardin autour de la localisation de l’utilisateur ainsi qu’un système de recherche par compétences.
 
 Dans la phase II :
 * En reprenant les éléments précédents, seront ajoutés un service de revente de fruits/légumes entre particuliers ainsi qu’un service de prêt de matériel agricole.
@@ -111,8 +113,8 @@ En phase II :
 
 ## Quels sont les principaux critères de mise en relation à enregistrer ?
 
-* Les producteurs devront renseigner leur profil (nom, prénom, résumé s’il le souhaite), leurs localisation, la superficie de leur terrain, le type d’agriculture qu’ils pratiquent et leurs disponibilités pour partager leurs compétences. 
-* Les utilisateurs devront renseigner leur profil (nom, prénom, résumé s’il le souhaite) et leur localisation. Ils pourront effectuer une recherche par types de compétences et localisation.
+* Les producteurs devront renseigner leur profil (nom, prénom, résumé s’il le souhaite), leurs localisations, la superficie de leur terrain, le type d’agriculture qu’ils pratiquent et leurs disponibilités pour partager leurs compétences. 
+* Les utilisateurs devront renseigner leur profil (nom, prénom, résumé s’il le souhaite) et leur localisation. Ils pourront effectuer une recherche par type de compétences et localisation.
 
 En phase II les produits devront renseigner leur catalogue de vente, la façon de cultiver des produits, leurs disponibilités et leurs prix.
 
@@ -127,7 +129,7 @@ Phase I :
 Phase II :
 * Encore une fois, via la plateforme, l’utilisateur pourra accéder à tous les producteurs vendeurs de denrées alimentaires dans le secteur de l’utilisateur. Il pourra passer commande et payer directement via la plateforme, facilitant ainsi les échanges.
 
-A terme, un système de livraison est envisagé afin de proposer un service complet à l’utilisateur et permettre aux producteurs de se concentrer sur leur cœur de métier.
+À terme, un système de livraison est envisagé afin de proposer un service complet à l’utilisateur et permettre aux producteurs de se concentrer sur leur cœur de métier.
 
 
 ## Comment les utilisateurs et les producteurs vont-ils interagir ?
@@ -135,7 +137,7 @@ A terme, un système de livraison est envisagé afin de proposer un service comp
 * En phase I & II les utilisateurs et producteurs interagissent directement via les outils de plateforme.
 
 
-## Quelle est la nature et le type d’interaction ?
+## Quels sont la nature et le type d’interaction ?
 
 Phase I : 
 * La nature des échanges ne sera en rien commerciale, elle se base sur un souhait de partage de connaissance autour des compétences agricoles.
@@ -147,7 +149,7 @@ Phase II :
 ## Fixation de prix
 
 * La fixation des prix sera centralisée au niveau de la plateforme, le même pourcentage sera appliqué pour l’ensemble des vendeurs (en fonction des catégories de producteurs),
-* Pour les producteurs les prix seront décentralisés, ils pourront choisir eux même le prix de vente de leurs produits.
+* Pour les producteurs, les prix seront décentralisés, ils pourront choisir eux même le prix de vente de leurs produits.
 
 
 ## Comment monétiser la plateforme ?
@@ -164,10 +166,10 @@ Pour vendre les produits, les producteurs devront posséder un profil premium, l
 
 ## La nature de la transaction clef
 
-* La nature de la transaction clef sera le pourcentage ajouté aux prix de vente, pour le fonctionnement de la plateforme.
+* La nature de la transaction clef sera le pourcentage ajouté au prix de vente, pour le fonctionnement de la plateforme.
 
 
-## Quelle donnée / KPI seront nécessaire au départ pour gérer la plateforme ?
+## Quelle donnée/KPI seront nécessaire au départ pour gérer la plateforme ?
 
 * Le nombre d’utilisateurs nécessaire avant de passer à la phase II,
 * La **taux de conversion** (pour le producteur) entre profil gratuit et profil payant,
@@ -181,13 +183,13 @@ Pour vendre les produits, les producteurs devront posséder un profil premium, l
 
 ## Segments de clientèle : pour qui ?
 
-On vise les particuliers dans dans 1er temps, notamment :
-1. Les particuliers n’ayant pas de jardins (tous les âges) : ça sera nos acheteurs
-1. Les particuliers ayant un jardins (tous les âges) : ça sera nos producteurs
+On vise les particuliers dans 1er temps, notamment :
+1. Les particuliers n’ayant pas de jardins (tous les âges) : cela seront nos acheteurs,
+1. Les particuliers ayant un jardins (tous les âges) : cela seront nos producteurs.
 
 Puis dans un 2nd temps, on vise d’un côté les particuliers avec un faible revenu à la recherche de produits de qualité (bio et local) mais qui n’ont pas beaucoup les moyens.
 
-Aussi, on vise une grosse majorité des agriculteurs (pour ne pas dire tous les agriculteurs) pour leurs passions (détailler ci-dessous dans la catégorie suivante)
+Aussi, on vise une grosse majorité des agriculteurs (pour ne pas dire tous les agriculteurs) pour leurs passions (détailler ci-dessous dans la catégorie suivante).
 
 
 ## Proposition de valeur : quoi et pourquoi ?
@@ -204,18 +206,18 @@ Enfin, pour les agriculteurs, cela permettra de pouvoir faire partager leurs pas
 
 La plateforme assurera cette mise en relation via notre réseau de particuliers ayant ou à la recherche de compétences, ainsi qu’une sécurité à travers nos offres d’assurance pour les sessions qui seront réservées.
 
-Dans un futur, il n’y aura pas que sessions liées à l’agriculture propre mais également tout ce qui va avec, l’apiculture, etc. et on sait que ces personnes auront des sensibilités similaires..
+Dans un futur, il n’y aura pas que les sessions liées à l’agriculture propre mais également tout ce qui va avec, l’apiculture, etc. et on sait que ces personnes auront des sensibilités similaires..
 
 
 ## Canaux : comment ?
 
-Evidemment nous allons communiquer à travers plusieurs canaux :
-* Les écoles : on va viser les particuliers à travers des événements scolaires avec les enfants
-* Les associations : à creuser
-* Les magasins spécialisés : tels que Biocoop, etc. via des partenariats ou des flyers
-* Les publicités ciblées : via Google Ads avec un budget défini
-* Code promo : attirer des clients directement via des incitations financières sur notre site
-* Partenariat avec des assurances ou des banques avec les valeurs portées par Greenand (Crédit coopératif, MAIF, MACIF, etc.), ou encore des sites sur le même thème comme ManoMano ou Bricorama… (outils, etc.)
+Évidemment, nous allons communiquer à travers plusieurs canaux :
+* Les écoles : on va viser les particuliers à travers des événements scolaires avec les enfants,
+* Les associations : à creuser,
+* Les magasins spécialisés : tels que Biocoop, etc. via des partenariats ou des flyers,
+* Les publicités ciblées : via Google Ads avec un budget défini,
+* Code promo : attirer des clients directement via des incitations financières sur notre site,
+* Partenariat avec des assurances ou des banques avec les valeurs portées par Greenand (Crédit coopératif, MAIF, MACIF, etc.), ou encore des sites sur le même thème comme ManoMano ou Bricorama… (outils, etc.).
 
 
 ## Relations avec les clients : comment ?
@@ -243,8 +245,8 @@ Les ressources clés sont :
 
 Les partenariats clés sont :
 * Les **assurances** afin de pouvoir assurer un service de protection pour les personnes et/ou le matériel agricole dans les prochaines années. Notre développement pourrait être compromis sans ces partenariats.
-* Les **banques coopératives** afin pouvoir donner une bonne image de l’entreprise et que nos finances ne soit pas stockées dans des banques non appropriées à nos valeurs.
-* (Les magasins bio afin de pouvoir faire de la promotion quant à notre cause → mais ce n’est finalement pas si un “partenariat clé” car même sans cela,nous pourrions toujours faire tourner l’entreprise)
+* Les **banques coopératives** afin de pouvoir donner une bonne image de l’entreprise et que nos finances ne soit pas stockées dans des banques non appropriées à nos valeurs.
+* (Les magasins bio afin de pouvoir faire de la promotion quant à notre cause → mais ce n’est finalement pas si un “partenariat clé” car même sans cela,nous pourrions toujours faire tourner l’entreprise).
 
 
 ## Flux de revenus & structure des coûts : combien ?
@@ -253,19 +255,19 @@ Les partenariats clés sont :
 * Fonctionnalité partage jardin gratuite
 
 ### Phase 2 : freemium : ajout d’une extension payante
-* Fonctionnalité partage jardin gratuite toujours gratuite
-* Fonctionnalité d’échange d’outils et assurance de ces derniers
-* Fonctionnalité sur le modèle des AMAP + commission sur le prix des ventes (de toute façon bien moins cher que les AMAP avec la commission incluse.
-* Créneaux dédiés spécifiquement pour les clients premiums
+* Fonctionnalité partage jardin gratuite toujours gratuite,
+* Fonctionnalité d’échange d’outils et assurance de ces derniers,
+* Fonctionnalité sur le modèle des AMAP + commission sur le prix des ventes (de toute façon bien moins cher que les AMAP avec la commission incluse,
+* Créneaux dédiés spécifiquement pour les clients premiums.
 
 ### Phase 3 :  service de livraison
-* service de livraison
+* Service de livraison
 
 
 # En conclusion
 
 Sur la base à la fin de la première année où notre budget serait de **-500.313€** (voir le Business Plan) et qu’on récupère + **55.845** clients, on aurait un coût par tête de **~8.96€**.
 
-L’abonnement à 2€ pour les fonctionnalités premium (ci-dessus) permettrait ainsi de couvrir une partie de nos frais (1 client en financerait 3). Notre but dans les premières années n’est pas d’être rentable mais de récupérer le maximum de clients et de construire notre réseau. Plus il y aura de clients, plus on fera des économies d’échelle, plus le coût par tête baissera.
+L’abonnement à 2€ pour les fonctionnalités premium (ci-dessus) permettrait ainsi de couvrir une partie de nos frais (1 client en financerait 3). Notre but dans les premières années n’est pas d’être rentable, mais de récupérer le maximum de clients et de construire notre réseau. Plus il y aura de clients, plus on fera des économies d’échelle, plus le coût par tête baissera.
 
-Dans le futur, on pourrait imaginer qu’on augmenterait les prix et ainsi on deviendrait rentable (modèle de Netflix par exemple) et une fonctionnalité de livraison pourrait voir le jour avec pourquoi une nouvelle offre qui enrichirait notre catalogue.
+Dans le futur, on pourrait imaginer qu’on augmenterait les prix et ainsi, on deviendrait rentable (modèle de Netflix par exemple) et une fonctionnalité de livraison pourrait voir le jour avec pourquoi une nouvelle offre qui enrichirait notre catalogue.

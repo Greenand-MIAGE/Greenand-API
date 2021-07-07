@@ -2,7 +2,7 @@
 
 ## Missions
 
-Nous avons décidé d’adopter pour notre application web un design simple, efficace et moderne avec une touche de féminité et de douceur( qui est notamment visible dans les différentes bordures arrondies des composants de notre application) afin de refléter au mieux l’image de notre projet; solidarité et partage.
+Nous avons décidé d’adopter pour notre application web un design simple, efficace et moderne avec une touche de féminité et de douceur (qui est notamment visible dans les différentes bordures arrondies des composants de notre application) afin de refléter au mieux l’image de notre projet; solidarité et partage.
 
 
 ## Notre logo
@@ -38,7 +38,7 @@ Les polices utilisées dans notre site internet sont :
 * _Helvetica_ : pour tous les titres, ainsi qu’au niveau du Footer.
 * _Arial_ : pour le reste de nos textes.
 
-Ces deux polices sont “Sans serif” c’est-à-dire sans empattement et cela afin de permettre une **meilleure lisibilité à l’écran et facilitent la lecture pour les personnes malvoyantes ainsi que les personnes atteintes de dyslexie**. 
+Ces deux polices sont “Sans serif” c’est-à-dire sans empattement, et cela, afin de permettre une **meilleure lisibilité à l’écran et facilitent la lecture pour les personnes malvoyantes ainsi que les personnes atteintes de dyslexie**. 
 
 Les tailles de police diffèrent en fonction des pages et évidemment, plus la taille de police est grande, plus l’information véhiculée est importante.
 
@@ -47,7 +47,7 @@ Les tailles de police diffèrent en fonction des pages et évidemment, plus la t
 
 Toutes les images utilisées sur notre site web sont totalement **libres de droits et d’utilisations** et proviennent pour la plupart des banques d’images telles que _Pexels_ et _Pixabay_.
 
-Nous n'avons donc aucun problème lié aux droits d’auteurs et d’utilisation. 
+Nous n'avons donc aucun problème lié aux droits d’auteur et d’utilisation. 
 
 Les dimensions de nos images diffèrent d’une page à une autre :
 

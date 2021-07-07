@@ -112,7 +112,8 @@ Fait à Paris, le 03/07/2021.
 
 En 10 exemplaires.
 
-![tamponGreenand](https://user-images.githubusercontent.com/56674425/124818921-e0be6180-df6b-11eb-8678-353829809967.png)
+
+![tamponGreenand](https://i.imgur.com/TES0JiM.png)
 
 
 ## POLITIQUE DE GESTION DES COOKIES

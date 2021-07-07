@@ -82,6 +82,19 @@ export const reservationActivityHandler = async (
   return res.send(reservation && deletedCreneau);
 };
 
+export const getActivityByIdHandler = async (req: Request, res: Response) => {
+  try {
+    const activityId = req.params.activityId;
+    const activity = await findActivity({ activityId });
+    if (!activity) {
+      return res.sendStatus(404);
+    }
+    res.send(activity);
+  } catch (err) {
+    return res.status(409).send(err.message);
+  }
+};
+
 export const getActivitiesHandler = async (req: Request, res: Response) => {
   try {
     const activities = await getActivies();

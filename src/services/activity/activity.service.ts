@@ -65,7 +65,7 @@ export const findActivity = async (
   query: FilterQuery<ActivityDocument>,
   options: QueryOptions = { lean: true }
 ) => {
-  return Activity.findById(new ObjectId(query.activityId), {}, options);
+  return Activity.findById(Types.ObjectId(query.activityId), {}, options);
 };
 
 export const getActivies = async () => {

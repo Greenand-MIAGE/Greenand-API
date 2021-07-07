@@ -1,4 +1,4 @@
-# Greenand-FRONT
+# Greenand-API/FRONT
 
 
 ## But du projet

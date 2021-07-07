@@ -1,6 +1,6 @@
 ﻿# Formalisation du projet
 
-**GreenAnd**
+**Greenand**
 > L'idée : création d’un site de partage de terrains et de connaissances autour de l’agriculture privée.
 
 
@@ -16,7 +16,7 @@
 * Création simple des statuts juridiques.
 
 ### Au niveau de rémunération
-Le/les gérants peuvent percevoir une rémunération fixe + variable (sans minimum).
+* Le/les gérants peuvent percevoir une rémunération fixe + variable (sans minimum).
 
 ### Responsabilités
 * Pour les tiers, un gérant représente la société,
@@ -31,7 +31,7 @@ Le/les gérants peuvent percevoir une rémunération fixe + variable (sans minim
 ### Droit d’auteur
 * Logo et images : droits morales et patrimoniaux
 
-### CRÉATION D’UNE SARL
+### Création d'un SARL
 1. Constitution et dépôt en banque du capital social.
 1. Désignation du ou des gérants de la **SARL**.
 1. Rédaction des statuts de la **SARL**.
@@ -59,7 +59,7 @@ Le/les gérants peuvent percevoir une rémunération fixe + variable (sans minim
 * Les Mairies, qui peuvent être intéressé par des journée “verte” (de formation),
 * Une communication et des événement dans les grandes surface Bio,
 * Des partenariats avec les magasins spécialisés dans le bricolage & jardinage,
-* Des partenariats avec les assurances mutualistes (Phase 1 ou 2).
+* Des partenariats avec les assurances mutualistes/sociétaires (Phase 1).
 
 ### La communication investisseurs
 * *Utilisation de différentes subventions pour sécuriser les investisseurs et garder une certaine autonomie décisionnelle,
@@ -70,6 +70,6 @@ Le/les gérants peuvent percevoir une rémunération fixe + variable (sans minim
 
 
 ## Passage en phase de rentabilité
-* Développement du modèle payant pour l’achat de fruits/légumes/miel… entre particulier et d'un système de prêt d'outils
+* Développement du modèle payant pour l’achat de fruits/légumes/miel… entre particulier et d'un système de prêt d'outils,
 * Pénétration du marché des AMAP avec une meilleur expérience utilisateur,
 * Création de VA avec possibilité d’un système de livraison

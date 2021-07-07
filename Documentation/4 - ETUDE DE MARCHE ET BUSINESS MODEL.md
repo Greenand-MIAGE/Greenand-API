@@ -264,7 +264,7 @@ Les partenariats clés sont :
 
 # En conclusion
 
-Sur la base à la fin de la première année où notre budget serait de **-500.313€** (voir le Business Plan) et qu’on récupère +**55.845** clients, on aurait un coût par tête de **~8.96€**.
+Sur la base à la fin de la première année où notre budget serait de **-500.313€** (voir le Business Plan) et qu’on récupère + **55.845** clients, on aurait un coût par tête de **~8.96€**.
 
 L’abonnement à 2€ pour les fonctionnalités premium (ci-dessus) permettrait ainsi de couvrir une partie de nos frais (1 client en financerait 3). Notre but dans les premières années n’est pas d’être rentable mais de récupérer le maximum de clients et de construire notre réseau. Plus il y aura de clients, plus on fera des économies d’échelle, plus le coût par tête baissera.
 

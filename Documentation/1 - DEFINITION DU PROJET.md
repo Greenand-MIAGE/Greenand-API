@@ -1,7 +1,7 @@
 ﻿# Formalisation du projet
 
 **Greenand**
-> L'idée : création d’un site de partage de terrains et de connaissances autour de l’agriculture privée.
+> L'idée : création d’un site de partage de terrains et d'apprentissage d'une passion autour de l’agriculture privée.
 
 
 ## Définition de l’entité juridique de la société
@@ -72,4 +72,4 @@
 ## Passage en phase de rentabilité
 * Développement du modèle payant pour l’achat de fruits/légumes/miel… entre particulier et d'un système de prêt d'outils,
 * Pénétration du marché des AMAP avec une meilleur expérience utilisateur,
-* Création de VA avec possibilité d’un système de livraison
+* Création de VA avec possibilité d’un système de livraison.

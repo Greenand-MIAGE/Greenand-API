@@ -1,3 +1,4 @@
+//@ts-nocheck
 import {
   createClient,
   getClients,
@@ -7,7 +8,7 @@ import {
 import { omit, get } from "lodash";
 import { Request, Response } from "express";
 import Client from "../../models/client.model";
-import Session from "../../models/session.model"
+import Session from "../../models/session.model";
 import log from "../../logger";
 
 export const createClientHandler = async (req: Request, res: Response) => {
@@ -29,13 +30,12 @@ export const getClientsHandler = async (req: Request, res: Response) => {
 };
 
 export const getClientByIdHandler = async (req: Request, res: Response) => {
-  const clientId = get(req, `client._id`)
-  log.info(clientId)
+  const clientId = req.client.clientId;
 
-  const client = await Session.findOne({_id: clientId}).populate(`client`);
+  const client = await findClient({ clientId });
 
-  if(!client) if (!client) return res.sendStatus(404);
-  
+  if (!client) if (!client) return res.sendStatus(404);
+
   return res.send(client);
 };
 

@@ -1,4 +1,4 @@
-import { object, string, ref, number } from 'yup';
+import { object, string, number } from 'yup';
 
 export const createActivitySchema = object({
   body: object({
@@ -10,12 +10,6 @@ export const createActivitySchema = object({
         /^[a-zàâçéèêëîïôûùüÿñæœ .-]*$/i,
         `Label can contains only Latin letters`
       ),
-    clientMax: number()
-      .moreThan(
-        0,
-        `Your number client is to short - should be 1 client minimum`
-      )
-      .integer(`Your number is not a integer !`),
     description: string()
       .required(`Description is required`)
       .min(20, `Your description is to short - should be 20 chars minimum`),
@@ -24,6 +18,5 @@ export const createActivitySchema = object({
     startOfDay: string(),
     endOfDay: string(),
     startOfHour: string(),
-    endOfHour: string(),
   }),
 });

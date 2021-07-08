@@ -4,7 +4,9 @@ import {
   FilterQuery,
   UpdateQuery,
   QueryOptions,
+  Types,
 } from "mongoose";
+import log from "../../logger";
 
 export const createLand = async (input: DocumentDefinition<LandDocument>) => {
   try {
@@ -14,8 +16,6 @@ export const createLand = async (input: DocumentDefinition<LandDocument>) => {
   }
 };
 
-//export const deleteLand = async (inp)
-
 export const getLands = async () => {
   try {
     return await Land.find({});
@@ -24,9 +24,16 @@ export const getLands = async () => {
   }
 };
 
+export const getLandById = async (
+  query: FilterQuery<LandDocument>,
+  options: QueryOptions = { lean: true }
+) => {
+  return Land.find({ _id: Types.ObjectId(query.landId) }, {}, options);
+};
+
 export const findLandClient = async (
   query: FilterQuery<LandDocument>,
   options: QueryOptions = { lean: true }
 ) => {
-  return Land.findById(query.client.clientId, {}, options);
+  return Land.find({ client: Types.ObjectId(query.clientId) }, {}, options);
 };

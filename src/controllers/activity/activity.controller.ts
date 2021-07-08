@@ -1,20 +1,22 @@
+//@ts-nocheck
 import { get } from "lodash";
 import { Request, Response } from "express";
 import {
   addSchedule,
   createActivity,
   findActivity,
+  getActivies,
   reservationActivity,
+  getCrenau,
+  deleteCreneau,
 } from "../../services/activity/activity.service";
 import log from "../../logger";
 import { v4 as uuidv4 } from "uuid";
 
 export const createActivityHandler = async (req: Request, res: Response) => {
   try {
-      //@ts-ignore
-      const clientId = req.client.clientId;
+    const clientId = req.client.clientId;
     const landId = req.params.landId;
-    log.info(landId);
 
     const body = req.body;
 
@@ -29,18 +31,33 @@ export const createActivityHandler = async (req: Request, res: Response) => {
   }
 };
 
+export const getCreneauHandler = async (req: Request, res: Response) => {
+  try {
+    const body = req.body;
+    const creneau = await getCrenau({ body });
+    if (!creneau) {
+      return res.sendStatus(404);
+    }
+    res.send(creneau);
+  } catch (err) {
+    return res.status(409).send(err.message);
+  }
+};
+
 export const reservationActivityHandler = async (
   req: Request,
   res: Response
 ) => {
-  //@ts-ignore
   const clientReservationId = req.client.clientId;
-  log.info(clientReservationId);
   const activityId = req.params.activityId;
+  const body = req.body;
+  const idCreneau = req.body.idCreneau;
 
   const update = [
     {
-     client: clientReservationId,
+      client: clientReservationId,
+      startOfDay: body.startOfDay,
+      startOfHour: body.startOfHour,
     },
   ];
 
@@ -48,38 +65,41 @@ export const reservationActivityHandler = async (
 
   if (!activity) return res.sendStatus(404);
 
+  const deletedCreneau = await deleteCreneau(
+    { activityId },
+    { $pull: { disponibility: { _id: idCreneau } } },
+    { new: true }
+  );
+
   const reservation = await reservationActivity(
     { activityId },
-    { $push: {reservation: update }},
+    { $push: { reservation: update } },
     {
       new: true,
-    });
+    }
+  );
 
-  return res.send(reservation);
+  return res.send(reservation && deletedCreneau);
 };
 
-export const addScheduleHandler = async (
-  req: Request,
-  res: Response
-) => {
-  const clientOwnerId = get(req, `client.client`);
-  const activityId = req.params.activityId;
-  const activity = await findActivity({ activityId });
+export const getActivityByIdHandler = async (req: Request, res: Response) => {
+  try {
+    const activityId = req.params.activityId;
+    const activity = await findActivity({ activityId });
+    if (!activity) {
+      return res.sendStatus(404);
+    }
+    res.send(activity);
+  } catch (err) {
+    return res.status(409).send(err.message);
+  }
+};
 
-  if (!activity) return res.sendStatus(404); 
-
- 
-  const update = req.body.disponibility;
-
-    
-
-  
-  const schedule = await addSchedule(
-    { activityId },
-    { $push: {disponibility: [...update] }},
-    {
-      new: true,
-    });
-
-  return res.send(schedule);
+export const getActivitiesHandler = async (req: Request, res: Response) => {
+  try {
+    const activities = await getActivies();
+    return res.send(activities);
+  } catch (err) {
+    return res.status(409).send(err.message);
+  }
 };

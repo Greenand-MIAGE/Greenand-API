@@ -23,7 +23,7 @@ export const createClientSchema = object({
       .min(2, `The street name is to short - should be 2 chars minium`)
       .max(75, `The street name is to long - should be 75 chars maximum`)
       .matches(
-        /^[a-zàâçéèêëîïôûùüÿñæœ .-]*$/i,
+        /^[a-z0-9àâçéèêëîïôûùüÿñæœ .-]*$/i,
         `Street name can only contain Latin letters.`
       ),
     city: string()

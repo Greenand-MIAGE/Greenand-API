@@ -1,49 +1,43 @@
-import { Request, Response, NextFunction } from 'express';
-import { signJWT, verifyJWT } from '../utils/jwt.utils';
-import { getSession,  } from '../services/session/session.service';
+//@ts-nocheck
+import { Request, Response, NextFunction } from "express";
+import { signJWT, verifyJWT } from "../utils/jwt.utils";
+import { getSession } from "../services/session/session.service";
 
-function deserializeClient(
-    req : Request,
-    res : Response,
-    next : NextFunction
-) {
-    const { accessToken, refreshToken } = req.cookies;
-    
-    if (!accessToken) return next();
+function deserializeClient(req: Request, res: Response, next: NextFunction) {
+  const { accessToken, refreshToken } = req.cookies;
 
-    const { payload, expired } = verifyJWT(accessToken);
-    
-    if (payload) {
-        // @ts-ignore
-        req.client = payload;
+  if (!accessToken) return next();
 
-        return next();
-    }
-    
-    const { payload: refresh } = expired && refreshToken ? verifyJWT(refreshToken) : { payload: null};
+  const { payload, expired } = verifyJWT(accessToken);
 
-    if (!refresh) {
-        return next();
-    }
-    //@ts-ignore
-    const session = getSession(refresh.sessionId);
+  if (payload) {
+    req.client = payload;
 
-    if(!session){
-        return next();
-    }
+    return next();
+  }
 
-    const newAccessToken = signJWT(session, `5s`);
+  const { payload: refresh } =
+    expired && refreshToken ? verifyJWT(refreshToken) : { payload: null };
 
-    res.cookie(`accessToken`,newAccessToken, {
-        maxAge: 300000,
-        httpOnly: true,
-    });
+  if (!refresh) {
+    return next();
+  }
+  const session = getSession(refresh.sessionId);
 
-    //@ts-ignore
-    req.client = verifyJWT(newAccessToken).payload;
+  if (!session) {
+    return next();
+  }
 
-        return next();
+  const newAccessToken = signJWT(session, `5s`);
 
-};
+  res.cookie(`accessToken`, newAccessToken, {
+    maxAge: 300000,
+    httpOnly: true,
+  });
+
+  req.client = verifyJWT(newAccessToken).payload;
+
+  return next();
+}
 
 export default deserializeClient;

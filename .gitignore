@@ -65,6 +65,8 @@ StyleCopReport.xml
 
 config.json
 
+src/utils/config.ts
+
 # Files built by Visual Studio
 *_i.c
 *_p.c

@@ -1,4 +1,4 @@
-import { object, string, number } from 'yup';
+import { object, string } from "yup";
 
 export const createActivitySchema = object({
   body: object({

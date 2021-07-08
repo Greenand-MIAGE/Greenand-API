@@ -1,17 +1,16 @@
-import { get } from 'lodash';
-import { Request, Response, NextFunction} from 'express';
+//@ts-nocheck
+import { Request, Response, NextFunction } from "express";
 
 export function requiresClient(
-    req: Request,
-    res: Response,
-    next: NextFunction
+  req: Request,
+  res: Response,
+  next: NextFunction
 ) {
-    //@ts-ignore
-    if (!req.client) {
-        return res.status(403).send(`Invalid Session`);
-    }
+  if (!req.client) {
+    return res.status(403).send(`Invalid Session`);
+  }
 
-    return next();
-};
+  return next();
+}
 
 export default requiresClient;

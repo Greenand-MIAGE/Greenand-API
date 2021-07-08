@@ -1,9 +1,6 @@
 import { Router } from "express";
 import { validateRequest, requiresClient } from "../../middleware";
-import {
-  createClientSchema,
-  createClientSessionSchema,
-} from "../../schemas/client.schema";
+import { createClientSchema } from "../../schemas/client.schema";
 import {
   createClientSessionHandler,
   deleteClientSessionHandler,

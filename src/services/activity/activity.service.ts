@@ -1,8 +1,6 @@
 import Activity, { ActivityDocument } from "../../models/activity.model";
 import { DocumentDefinition, Types } from "mongoose";
 import { FilterQuery, UpdateQuery, QueryOptions } from "mongoose";
-import { ObjectId } from "mongodb";
-import log from "../../logger";
 
 export const createActivity = async (
   input: DocumentDefinition<ActivityDocument>

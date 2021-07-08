@@ -1,12 +1,5 @@
 import Land, { LandDocument } from "../../models/land.model";
-import {
-  DocumentDefinition,
-  FilterQuery,
-  UpdateQuery,
-  QueryOptions,
-  Types,
-} from "mongoose";
-import log from "../../logger";
+import { DocumentDefinition, FilterQuery, QueryOptions, Types } from "mongoose";
 
 export const createLand = async (input: DocumentDefinition<LandDocument>) => {
   try {

@@ -4,7 +4,6 @@ import {
   FilterQuery,
   UpdateQuery,
   QueryOptions,
-  Schema,
   Types,
 } from "mongoose";
 import { omit } from "lodash";
@@ -27,7 +26,7 @@ export const getClients = async () => {
   }
 };
 
-export  const validatePassword= async({
+export const validatePassword = async ({
   mail,
   password,
 }: {
@@ -46,19 +45,23 @@ export  const validatePassword= async({
   }
 
   return omit(client.toJSON(), `password`);
-}
+};
 
-export  const findClient = async(
+export const findClient = async (
   query: FilterQuery<ClientDocument>,
   options: QueryOptions = { lean: true }
 ) => {
   return Client.findById(Types.ObjectId(query.clientId), {}, options);
-}
+};
 
 export const findAndUpdateSkillClient = (
   query: FilterQuery<ClientDocument>,
   update: UpdateQuery<ClientDocument>,
   options: QueryOptions
 ) => {
-  return Client.findOneAndUpdate(Types.ObjectId(query.clientId), update, options);
+  return Client.findOneAndUpdate(
+    Types.ObjectId(query.clientId),
+    update,
+    options
+  );
 };

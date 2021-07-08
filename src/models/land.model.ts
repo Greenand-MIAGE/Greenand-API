@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
-import { v4 as uuidv4 } from 'uuid';
-import { ClientDocument } from './client.model';
+import mongoose from "mongoose";
+import { v4 as uuidv4 } from "uuid";
+import { ClientDocument } from "./client.model";
 
 export interface LandDocument extends mongoose.Document {
   id: string;
@@ -41,7 +41,11 @@ const LandSchema = new mongoose.Schema({
     lowercase: true,
     trim: true,
   },
-  client: { type: mongoose.Schema.Types.ObjectId, ref: `Client`, required: true}
+  client: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: `Client`,
+    required: true,
+  },
 });
 
 const Land = mongoose.model<LandDocument>(`Land`, LandSchema);

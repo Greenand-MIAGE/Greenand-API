@@ -1,6 +1,5 @@
-import mongoose from 'mongoose';
-import { v4 as uuidv4 } from 'uuid';
-
+import mongoose from "mongoose";
+import { v4 as uuidv4 } from "uuid";
 export interface SkillDocument extends mongoose.Document {
   id: string;
   label: string;

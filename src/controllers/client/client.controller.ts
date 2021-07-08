@@ -5,11 +5,8 @@ import {
   findClient,
   findAndUpdateSkillClient,
 } from "../../services/client/client.service";
-import { omit, get } from "lodash";
+import { omit } from "lodash";
 import { Request, Response } from "express";
-import Client from "../../models/client.model";
-import Session from "../../models/session.model";
-import log from "../../logger";
 
 export const createClientHandler = async (req: Request, res: Response) => {
   try {

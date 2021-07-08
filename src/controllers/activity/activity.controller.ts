@@ -2,7 +2,6 @@
 import { get } from "lodash";
 import { Request, Response } from "express";
 import {
-  addSchedule,
   createActivity,
   findActivity,
   getActivies,
@@ -10,8 +9,6 @@ import {
   getCrenau,
   deleteCreneau,
 } from "../../services/activity/activity.service";
-import log from "../../logger";
-import { v4 as uuidv4 } from "uuid";
 
 export const createActivityHandler = async (req: Request, res: Response) => {
   try {

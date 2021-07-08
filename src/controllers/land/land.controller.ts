@@ -1,8 +1,11 @@
 //@ts-nocheck
 import { get } from "lodash";
 import { Request, Response } from "express";
-import { createLand, getLands, getLandById } from "../../services/land/land.service";
-import log from "../../logger";
+import {
+  createLand,
+  getLands,
+  getLandById,
+} from "../../services/land/land.service";
 import { findClient } from "../../services/client/client.service";
 import { findLandClient } from "../../services/land/land.service";
 

@@ -10,7 +10,7 @@
 > ***Utilisateur connecté*** : personne ayant un compte et étant connectée.
 
 
-## Action 1 : En tant que visiteur, je peux accéder à la *Page d'accueil* 
+## Action 1 : En tant que visiteur, je peux accéder à la *Page d'accueil* :ballot_box_with_check: 
 
 * Le visiteur arrive sur une _Page d'accueil_ où il y a un header, un carrousel, des infos relatives au fonctionnement de l’application web et un footeur.
 * Le visiteur clique sur le bouton de connexion ![boutonConnexion](https://user-images.githubusercontent.com/56674425/124838381-fee58b00-df86-11eb-9705-f613a408f450.png).
@@ -31,7 +31,7 @@ Il existe ensuite 2 cas de figure :
 (passer de **`Se connecter`** à **`Créer un compte`** est possible depuis les formulaires)
 
 
-## Action 2 : En tant qu’utilisateur, je peux accéder à mon profil et le modifier
+## Action 2 : En tant qu’utilisateur, je peux accéder à mon profil et le modifier :ballot_box_with_check: 
 
 * L’utilisateur clique sur **`Profil`**.
 * Il accède à la Page profil où toutes ses informations sont affichées et plus bas un bouton **`Modifier`**.
@@ -40,7 +40,7 @@ Il existe ensuite 2 cas de figure :
 * Il clique sur **`Enregistrer les modifications`** pour les enregistrer.
 
 
-## Action 3 : En tant qu’utilisateur, je peux naviguer entre les différentes pages de l’application web
+## Action 3 : En tant qu’utilisateur, je peux naviguer entre les différentes pages de l’application web :ballot_box_with_check: 
 
 * Via le Header, l’utilisateur peut s'il le souhaite accéder à l’ensemble des pages de l’application web.
 * En cliquant sur le bouton ![boutonConnexion](https://user-images.githubusercontent.com/56674425/124838381-fee58b00-df86-11eb-9705-f613a408f450.png), un menu déroulant s’affiche et il clique sur le bouton qui lui convient.
@@ -48,7 +48,7 @@ Il existe ensuite 2 cas de figure :
 * En cliquant sur **`Créer une annonce`**, il est redirigé vers le formulaire de création d’une annonce.
 
 
-## Action 4 : En tant qu'utilisateur, je peux créer des terres
+## Action 4 : En tant qu'utilisateur, je peux créer des terres :ballot_box_with_check: 
 
 * L'utilisateur clique sur le bouton de connexion ![boutonConnexion](https://user-images.githubusercontent.com/56674425/124838381-fee58b00-df86-11eb-9705-f613a408f450.png).
 * Un menu déroulant lui permet d’accéder à son profil en cliquant sur **`Mon profil`**.
@@ -58,7 +58,7 @@ Il existe ensuite 2 cas de figure :
 * Il clique sur **`Ajouter`**.
 
 
-## Action 4.1 (optionnelle) : En tant qu'utilisateur, je peux accéder à ma liste d’annonce
+## Action 4.1 (optionnelle) : En tant qu'utilisateur, je peux accéder à ma liste d’annonce :x: 
 
 * L'utilisateur clique sur le bouton de connexion ![boutonConnexion](https://user-images.githubusercontent.com/56674425/124838381-fee58b00-df86-11eb-9705-f613a408f450.png).
 * Un menu déroulant lui permet d’accéder à son profil en cliquant sur **`Mon profil`**.
@@ -67,7 +67,7 @@ Il existe ensuite 2 cas de figure :
 * Il clique sur **`Fermer`** et il retourne sur sa page de profil.
 
 
-## Action 4.2 (optionnelle) : En tant qu'utilisateur, je peux accéder à ma liste des terres
+## Action 4.2 (optionnelle) : En tant qu'utilisateur, je peux accéder à ma liste des terres :x: 
 
 * L'utilisateur clique sur le bouton de connexion ![boutonConnexion](https://user-images.githubusercontent.com/56674425/124838381-fee58b00-df86-11eb-9705-f613a408f450.png). 
 * Un menu déroulant lui permet d’accéder à son profil en cliquant sur **`Mon profil`**.
@@ -76,7 +76,7 @@ Il existe ensuite 2 cas de figure :
 * Il clique sur **`Fermer`** et  il retourne sur sa page de profil.
 
 
-## Action 5 : En tant que visiteur ou utilisateur connecté, je peux accéder aux offres d’activités présentes sur le site
+## Action 5 : En tant que visiteur ou utilisateur connecté, je peux accéder aux offres d’activités présentes sur le site :ballot_box_with_check: 
 
 * Sur la _Page d’accueil_, via le _Header_, l’utilisateur peut accéder à la page des offres en cliquant sur **`Voir les offres`**.
 * Une liste des annonces disponibles s’affiche.
@@ -85,14 +85,14 @@ Il existe ensuite 2 cas de figure :
 * L’utilisateur peut réserver le créneau qui lui convient en cliquant sur le bouton **`Réserver`**.
 
 
-## Action 6 : En tant qu’utilisateur, connecté je peux proposer des activités
+## Action 6 : En tant qu’utilisateur, connecté je peux proposer des activités :ballot_box_with_check: 
 
 * Via le _Header_, en cliquant sur **`Créer une annonce`** l’utilisateur peut ajouter une annonce d’une offre (activités, terrain).
 * Il est redirigé vers un formulaire où il peut saisir toutes les informations relatives à son annonce (intitulé de l’offre, vos terrains, date de l'événement).
 * Et cliquer sur **`Ajouter`** ce qui permet de publier son annonce parmi la liste des offres.
 
 
-## Action 7 : En tant qu’utilisateur, connecté je peux me déconnecter
+## Action 7 : En tant qu’utilisateur, connecté je peux me déconnecter :ballot_box_with_check: 
 
 * Dans le _Header_, en cliquant sur le bouton, un menu déroulant s’affiche.
 * En cliquant sur le bouton **`Se déconnecter`**, il est redirigé vers la _Page d’accueil_ en étant déconnecté.

@@ -9,7 +9,7 @@ Nous avons décidé d’adopter pour notre application web un design simple, eff
 
 ![logoGreenand](https://i.imgur.com/8BcxLkM.png)
 
-Notre logo a été réalisé par Madame **Flora NGUYEN**. Ce logo est en parfaite diapason avec notre slogan "_Réconcilions les Hommes et les terres_”, d'un côté' la feuille et la feuille représente les Hommes et de l'autre côté les lignes fuyantes du sol et la tige de blé représente la terre.
+Notre logo a été réalisé par Madame **Flora NGUYEN**. Ce logo est en parfaite diapason avec notre slogan "_Réconcilions les Hommes et les terres_”, d'un côté la feuille et la feuille représente les Hommes et de l'autre côté les lignes fuyantes du sol et la tige de blé représente la terre.
 
 La police utilisée est : https://www.dafont.com/fr/olivia-dhorgent.font, nommée "_Olivia Dhorgent_" qui est entièrement gratuite et libre de droits (personnelle et commerciale).
 
@@ -27,7 +27,7 @@ La couleur verte fait écho aux terres et aux jardins ainsi qu’à notre nom �
 
 La nuance de blanc choisie est : **#FFFFFF** - ![démo#FFFFFF](https://user-images.githubusercontent.com/56674425/124830666-8973bd80-df7a-11eb-84a0-03743ba9f0c9.png). Cette dernière apporte luminosité et chaleur à notre application web. 
 
-Les touches de gris appliquées **#F1F1F1** - ![démo#F1F1F1](https://user-images.githubusercontent.com/56674425/124830923-d8215780-df7a-11eb-94ad-4cbf7ba85d99.png) et **#808080** - ![démo#808080](https://user-images.githubusercontent.com/56674425/124830764-a90ae600-df7a-11eb-92a2-467b7396ab1f.png), permettent de faire le contraste avec les deux autres couleurs et d'apporter une touche sobre à l’ensemble. 
+Les touches de gris appliquées **#F1F1F1** - ![démo#F1F1F1](https://user-images.githubusercontent.com/56674425/124830923-d8215780-df7a-11eb-94ad-4cbf7ba85d99.png), **#BBBABD** - ![démo#BBBABD](https://user-images.githubusercontent.com/56674425/124843827-11fe5800-df93-11eb-85d5-4a875b2c26c4.png) et **#808080** - ![démo#808080](https://user-images.githubusercontent.com/56674425/124830764-a90ae600-df7a-11eb-92a2-467b7396ab1f.png), permettent de faire le contraste avec les deux autres couleurs et d'apporter une touche sobre à l’ensemble. 
 
 Le mélange de ces trois couleurs permet un rendu épuré qui  nous fait penser aux émotions ressenties lorsqu’on est face à une touche de verdure, chaleur, réconfort et douceur.
 
@@ -74,17 +74,3 @@ Les dimensions de nos images diffèrent d’une page à une autre :
 
 * Bannière : 1920x1280,
 * Photo des annonces : 780x520.
-
-
-
-
-
-
-
-
-
-
-
-
-
-

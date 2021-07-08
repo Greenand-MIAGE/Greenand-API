@@ -16,13 +16,13 @@ export async function createClientSessionHandler(req: Request, res: Response) {
 
     const session =  createSession(mail, client.firstName ,client._id);
 
-    const accessToken = signJWT({mail: client.mail, name: client.firstName,clientId: client._id, sessionId: session.sessionId}, `900s`);
+    const accessToken = signJWT({mail: client.mail, name: client.firstName,clientId: client._id, sessionId: session.sessionId}, `1800s`);
     
     const refreshToken = signJWT({ sessionId: session.sessionId}, `1y`);
 
 
     res.cookie(`accessToken`, accessToken, {
-        maxAge: 900000,
+        maxAge: 1800000,
         httpOnly: true,
     });
 

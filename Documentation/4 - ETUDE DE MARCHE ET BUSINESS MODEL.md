@@ -11,7 +11,7 @@ Si un marché géographique est composé de 2 millions de consommateurs (ou clie
 _Étude de marché sur les végétaux en France en 2020 produit par Kantar [consultable à ce lien](https://www.valhor.fr/fileadmin/A-Valhor/Valhor_PDF/Etudes_BilanAchatsFrancaisVegetauxDonnees2020Complet_Kantar.pdf)._
 
 
-## Ce qui en ressort
+## Ce qui resort de l'étude de marché
 
 * **17 millions** de jardiniers (35% de la population),
 * Un million d’hectares de jardin (autant que les réserves naturelles),
@@ -271,3 +271,8 @@ Sur la base à la fin de la première année où notre budget serait de **-500.3
 L’abonnement à 2€ pour les fonctionnalités premium (ci-dessus) permettrait ainsi de couvrir une partie de nos frais (1 client en financerait 3). Notre but dans les premières années n’est pas d’être rentable, mais de récupérer le maximum de clients et de construire notre réseau. Plus il y aura de clients, plus on fera des économies d’échelle, plus le coût par tête baissera.
 
 Dans le futur, on pourrait imaginer qu’on augmenterait les prix et ainsi, on deviendrait rentable (modèle de Netflix par exemple) et une fonctionnalité de livraison pourrait voir le jour avec pourquoi une nouvelle offre qui enrichirait notre catalogue.
+
+
+## Le Business Plan
+
+Le Business Plan prévisionnel sur la première année de Greenand (tableaux avec feuilles de calcul) est [consultable à ce lien](https://docs.google.com/spreadsheets/d/15Y7IJFbze50Me-HEo6FfVpuBrJ1nhx1fxS9sAbFDei0/edit?usp=sharing).
